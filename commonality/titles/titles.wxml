@@ -1,0 +1,14 @@
+<view class="contion">
+<view class="logo">
+<image style="width:144rpx;height:60rpx;" src="../../imgs/icon/logo.png"></image>
+</view>
+<view class="seach">
+<image style="width:40rpx;height:40rpx;" src="../../imgs/icon/seach.png"></image>
+</view>
+<view class="login">
+<image style="width:60rpx;height:45rpx;" src="../../imgs/icon/login.png"></image>
+</view>
+<view class="down">
+下载 app
+</view>
+</view>

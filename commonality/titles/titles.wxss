@@ -1,0 +1,30 @@
+.contion{
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.logo{
+  flex: 7;
+}
+.seach{
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.login{
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.down{
+  flex: 3;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: pink;
+  padding: 10rpx;
+  color: white;
+  border-radius: 20rpx;
+}
