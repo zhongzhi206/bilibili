@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/homepages/homepages"
+    "pages/homepages/homepages",
+    "pages/videoinfo/videoinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

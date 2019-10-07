@@ -5,13 +5,67 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nvalist:[]
+    // 导航栏文本
+    nvalist: [],
+    //轮播图片地址
+    imgURL:[],
+    //获取视频
+    videosList:[]
   },
-  getnavlist(){
+  //定义被点击菜单的索引值
+  currenentIndexNav: 0,
+  // 当用户点击文本后，显示相应的导航栏文本模块
+  activeNav(e){
+    this.setData({
+      currenentIndexNav:e.target.dataset.index
+    })
+  },
+
+
+  //获取头部导航栏文字
+  getNavlist(){
+    let that=this;
     wx.request({
+      
       url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/navList',
+      
       success(res){
-        console.log("ceshi");
+        if(res.data.code==0){
+          that.setData({
+            nvalist:res.data.data.navList
+          })
+        }
+      }
+    })
+  },
+  
+  //获取轮播图
+  getImg(){
+    let that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+      success(res) {
+        if (res.data.code == 0) {
+          that.setData({
+            imgURL: res.data.data.swiperList
+          })
+        }
+      }
+    })
+  },
+
+
+  //获取视频
+  getvideos(){
+    let that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      success(res) {
+        if (res.data.code == 0) {
+          that.setData({
+            videosList: res.data.data.videosList
+          })
+        }
       }
     })
   },
@@ -19,7 +73,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getnavlist();
+    this.getNavlist();
+    this.getImg();
+    this.getvideos();
   },
 
   /**

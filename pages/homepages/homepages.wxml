@@ -1,3 +1,37 @@
 <view>
-<titles></titles>
+    <titles></titles>
+    <!-- 菜单列表 -->
+    <view class="menus">
+        <scroll-view class="nav" scroll-x>
+            <view bindtap="activeNav" data-index="{{index}}" class="nav_item {{index==currenentIndexNav?'active':''}}" wx:for="{{nvalist}}" wx:key="{{index}}">
+                {{item.text}}
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 首页轮播图效果 -->
+    <swiper indicator-dots="true" indicator-color="withe" indicator-active-color="pink" autoplay="true" easing-function="easeInCubic">
+        <block wx:for="{{imgURL}}" wx:key="{{index}}">
+            <swiper-item class="lunbo">
+                <image src="{{item.imgSrc}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- 视频列表 -->
+    <view class="video_warp">
+        <navigator url="../videoinfo/videoinfo?id={{item.id}}" class="nav_video" wx:for="{{videosList}}" wx:key="{{index}}">
+            <!-- 图片 -->
+            <view class="video_img">
+                <image src="{{item.imgSrc}}"></image>
+                <!-- 视频信息 -->
+                <view class="video_info">
+                    <!-- 播放量 -->
+                    <view class="play_count">播放量：{{item.playCount}}</view>
+                    <!-- 评论量 -->
+                    <view class="commentCount">评论数：{{item.commentCount}}</view>
+                </view>
+            </view>
+            <!-- 标题 -->
+            <view class="video_Title">{{item.desc}}</view>
+        </navigator>
+    </view>
 </view>

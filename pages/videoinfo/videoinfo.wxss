@@ -1,37 +1,14 @@
-view{
-  padding: 0;
-  margin: 0;
+ video{
+  width: 100%;
+  margin: 10rpx auto;
 }
-.menus{
-
-}
-.nav{
-  white-space: nowrap;
-  padding: 10rpx;
-}
-.nav_item{
-  padding: 20rpx 45rpx;
-  font-size: 30rpx;
-  display: inline-block;
-}
-.nav_item.active{
-  border-bottom: 5rpx solid pink;
-}
-swiper{
-  width: 95%;
-  height: 220rpx;
+.nav_video{
+  width: 46%;
+  padding: 15rpx;
 }
 image{
   width: 100%;
   height: 220rpx;
-}
-swiper{
-  margin: 10rpx auto;
-}
-
-.nav_video{
-  width: 46%;
-  padding: 15rpx;
 }
 .video_warp{
   display: flex;

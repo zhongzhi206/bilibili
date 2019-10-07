@@ -1,0 +1,30 @@
+<view class="main">
+    <titles></titles>
+    <view class="video_info">
+        <video src="{{videoinfo.videoSrc}}" controls></video>
+        <view>{{videoinfo.videoTitle}}</view>
+        <view style="font-size:25rpx;display:inline;">
+            {{videoinfo.author}}
+            <text style="font-size:24rpx;color:#ccc">
+                \t\t\t{{videoinfo.playCount}}次观看\t{{videoinfo.commentCount}}条评论\t{{videoinfo.date}}
+            </text>
+        </view>
+    </view>
+    <view class="video_warp">
+        <navigator url="../videoinfo/videoinfo?id={{item.id}}" class="nav_video" wx:for="{{othersList}}" wx:key="{{index}}">
+            <!-- 图片 -->
+            <view class="video_img">
+                <image src="{{item.imgSrc}}"></image>
+                <!-- 视频信息 -->
+                <view class="video_info">
+                    <!-- 播放量 -->
+                    <view class="play_count">播放量：{{item.playMsg}}</view>
+                    <!-- 评论量 -->
+                    <view class="commentCount">评论数：{{item.commentCount}}</view>
+                </view>
+            </view>
+            <!-- 标题 -->
+            <view class="video_Title">{{item.title}}</view>
+        </navigator>
+    </view>
+</view>
